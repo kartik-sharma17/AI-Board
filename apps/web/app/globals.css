@@ -5,10 +5,13 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ------------------------------------------------------------------ */
-/* Theme tokens — classic black & white                                */
+/* Theme tokens — AU Board: warm coral AI-accent + violet primary      */
 /* ------------------------------------------------------------------ */
 :root {
   --radius: 0.625rem;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -16,37 +19,46 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
 
-  --primary: oklch(0.205 0 0);
+  /* violet — primary actions, "talk it through" / video */
+  --primary: oklch(0.53 0.19 275);
   --primary-foreground: oklch(0.985 0 0);
 
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.96 0.02 275);
+  --secondary-foreground: oklch(0.35 0.1 275);
 
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
 
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  /* coral — reserved for AI moments only */
+  --accent: oklch(0.75 0.16 45);
+  --accent-foreground: oklch(0.22 0.04 45);
 
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #ffffff;
 
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --ring: oklch(0.53 0.19 275 / 0.5);
 
   --font-poppins: "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-anton: "Anton", ui-sans-serif, system-ui, sans-serif;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
+
+  /* chart / decorative palette */
+  --chart-1: oklch(0.53 0.19 275);
+  --chart-2: oklch(0.75 0.16 45);
+  --chart-3: oklch(0.72 0.13 230);
+  --chart-4: oklch(0.8 0.12 15);
+  --chart-5: oklch(0.86 0.15 90);
+
+  /* whiteboard marker colors — used only inside product illustrations */
+  --marker-yellow: oklch(0.86 0.15 90);
+  --marker-pink: oklch(0.8 0.13 15);
+  --marker-sky: oklch(0.82 0.09 230);
+  --marker-violet: oklch(0.78 0.1 290);
+
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary: oklch(0.53 0.19 275);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
@@ -83,14 +95,22 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
+  --color-marker-yellow: var(--marker-yellow);
+  --color-marker-pink: var(--marker-pink);
+  --color-marker-sky: var(--marker-sky);
+  --color-marker-violet: var(--marker-violet);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
 
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-poppins);
   --font-display: var(--font-anton);
   --font-heading: var(--font-sans);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -104,9 +124,6 @@
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 html,
@@ -131,10 +148,143 @@ body {
   }
 }
 
-/* Utility: Anton display headings */
 .font-display {
   font-family: var(--font-anton);
   letter-spacing: 0.01em;
+}
+
+/* one orchestrated hero moment — sketch lines draw in, AI badge follows */
+.sketch-path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: draw 1.6s ease-out 0.4s forwards;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.ai-badge {
+  opacity: 0;
+  transform: translateY(6px) scale(0.96);
+  animation: badge-in 0.5s ease-out 1.6s forwards;
+}
+@keyframes badge-in {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.cursor-tag {
+  opacity: 0;
+  animation: fade-in 0.4s ease-out forwards;
+}
+.cursor-tag.c1 {
+  animation-delay: 1.9s;
+}
+.cursor-tag.c2 {
+  animation-delay: 2.15s;
+}
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+.dotted-canvas {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: var(--border);
+}
+
+/* slow drifting color blobs used behind section headers */
+@keyframes blob-move {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -24px) scale(1.08);
+  }
+  66% {
+    transform: translate(-24px, 18px) scale(0.94);
+  }
+}
+.animate-blob {
+  animation: blob-move 14s ease-in-out infinite;
+}
+.animate-blob-delay-1 {
+  animation-delay: 3.5s;
+}
+.animate-blob-delay-2 {
+  animation-delay: 7s;
+}
+
+/* gentle vertical bob, used on sticky notes / floating chips */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.animate-float {
+  animation: float 4.5s ease-in-out infinite;
+}
+.animate-float-delay {
+  animation-delay: 1.2s;
+}
+
+/* infinite horizontal scroll, used for the logo strip */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 26s linear infinite;
+}
+
+/* shifting gradient background, used on the CTA banner */
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+.animate-gradient {
+  background-size: 220% 220%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* soft pulse ring, used on the AI badge */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--accent) 45%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 10px color-mix(in oklch, var(--accent) 0%, transparent);
+  }
+}
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .dark {
@@ -144,26 +294,21 @@ body {
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --primary: oklch(0.68 0.17 275);
+  --primary-foreground: oklch(0.145 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --accent: oklch(0.75 0.16 45);
+  --accent-foreground: oklch(0.145 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: oklch(0.53 0.19 275);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
