@@ -4,10 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 
 const links = [
-  { href: "#product", label: "Product" },
-  { href: "#how-it-works", label: "How it works" },
-  { href: "#solutions", label: "Solutions" },
-  { href: "#pricing", label: "Pricing" },
+  { href: "#product", label: "Product", color: "var(--primary)" },
+  { href: "#how-it-works", label: "How it works", color: "var(--marker-sky)" },
+  { href: "#solutions", label: "Solutions", color: "var(--accent)" },
+  { href: "#pricing", label: "Pricing", color: "var(--marker-pink)" },
 ];
 
 export function SiteHeader() {
@@ -29,7 +29,12 @@ export function SiteHeader() {
 
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
             {links.map((l) => (
-              <a key={l.href} href={l.href} className="transition-colors hover:text-foreground">
+              <a
+                key={l.href}
+                href={l.href}
+                className="relative py-1 transition-colors duration-200 hover:[color:var(--link-color)] after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[var(--link-color)] after:transition-all after:duration-300 hover:after:w-full"
+                style={{ ["--link-color" as string]: l.color }}
+              >
                 {l.label}
               </a>
             ))}

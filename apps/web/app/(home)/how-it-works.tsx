@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUp, staggerContainer, viewport } from "@/lib/motion";
+import { fadeUp, staggerContainer, viewport } from "./motion";
 
 const steps = [
   { n: "1", title: "Open a room", desc: "Share one link. No installs, no accounts required for guests.", color: "var(--primary)" },

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUp, viewport } from "@/lib/motion";
+import { fadeUp, viewport } from "./motion";
 
 export function Cta() {
   return (

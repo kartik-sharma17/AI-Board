@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUp, staggerContainer, viewport } from "@/lib/motion";
+import { fadeUp, staggerContainer, viewport } from "./motion";
 
 const features = [
   {
