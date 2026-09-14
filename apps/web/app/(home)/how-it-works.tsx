@@ -5,7 +5,7 @@ import { fadeUp, staggerContainer, viewport } from "./motion";
 
 const steps = [
   { n: "1", title: "Open a room", desc: "Share one link. No installs, no accounts required for guests.", color: "var(--primary)" },
-  { n: "2", title: "Talk through the idea", desc: "AU Board listens in the background while you and your team discuss.", color: "var(--marker-sky)" },
+  { n: "2", title: "Talk through the idea", desc: "Thinkspace listens in the background while you and your team discuss.", color: "var(--marker-sky)" },
   { n: "3", title: "Watch it get sketched", desc: "Flows, architecture and wireframes appear on the canvas as you speak.", color: "var(--accent)" },
   { n: "4", title: "Edit together", desc: "Drag, redraw, comment or override anything the AI put down.", color: "var(--marker-pink)" },
   { n: "5", title: "Hand it off", desc: "Export as PNG or PDF, or leave a live link for async review.", color: "var(--marker-yellow)" },

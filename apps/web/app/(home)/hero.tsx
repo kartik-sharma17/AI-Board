@@ -32,7 +32,7 @@ export function Hero() {
             Watch it get drawn.
           </motion.h1>
           <motion.p variants={fadeUp} className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            AU Board puts your call and your canvas in the same room. Talk through an idea and the
+            Thinkspace puts your call and your canvas in the same room. Talk through an idea and the
             AI sketches it live — flows, diagrams, wireframes — so the meeting ends with something
             built, not just notes.
           </motion.p>

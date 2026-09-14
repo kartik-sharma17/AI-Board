@@ -26,7 +26,7 @@ export function SiteFooter() {
                   <rect x="12.5" y="12.5" width="8" height="8" rx="2" stroke="currentColor" strokeWidth="1.8" />
                 </svg>
               </span>
-              <span className="text-lg font-semibold tracking-tight">AU Board</span>
+              <span className="text-lg font-semibold tracking-tight">Thinkspace</span>
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               Video, canvas and AI sketching in one room, for teams who think better out loud.
@@ -67,7 +67,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
-          <p className="text-xs text-muted-foreground">© 2026 AU Board, Inc. All rights reserved.</p>
+          <p className="text-xs text-muted-foreground">© 2026 Thinkspace, Inc. All rights reserved.</p>
           <div className="flex items-center gap-6 text-xs text-muted-foreground">
             <a href="#" className="transition-colors hover:text-foreground">
               Privacy policy

@@ -16,7 +16,7 @@ const cases = [
   },
   {
     title: "Engineering",
-    desc: "Whiteboard system architecture live during a design review, and let AU Board keep the diagram tidy while you talk through trade-offs.",
+    desc: "Whiteboard system architecture live during a design review, and let Thinkspace keep the diagram tidy while you talk through trade-offs.",
     color: "var(--marker-sky)",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none">

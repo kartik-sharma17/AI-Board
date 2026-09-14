@@ -15,9 +15,9 @@ const anton = Anton({
 });
 
 export const metadata: Metadata = {
-  title: "AU Board — Talk it through. Watch it get drawn.",
+  title: "Thinkspace — Talk it through. Watch it get drawn.",
   description:
-    "AU Board puts your call and your canvas in the same room. Talk through an idea and the AI sketches it live — flows, diagrams, wireframes — so the meeting ends with something built, not just notes.",
+    "Thinkspace puts your call and your canvas in the same room. Talk through an idea and the AI sketches it live — flows, diagrams, wireframes — so the meeting ends with something built, not just notes.",
 };
 
 export default function RootLayout({

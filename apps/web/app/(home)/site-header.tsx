@@ -24,7 +24,7 @@ export function SiteHeader() {
                 <rect x="12.5" y="12.5" width="8" height="8" rx="2" stroke="currentColor" strokeWidth="1.8" />
               </svg>
             </span>
-            <span className="text-lg font-semibold tracking-tight">AU Board</span>
+            <span className="text-lg font-semibold tracking-tight">Thinkspace</span>
           </Link>
 
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">

@@ -18,7 +18,7 @@ export function Stats() {
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={viewport}>
           <h2 className="font-display text-4xl sm:text-5xl">The board, in numbers.</h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            AU Board has been quietly turning meetings into diagrams for teams who&apos;d rather
+            Thinkspace has been quietly turning meetings into diagrams for teams who&apos;d rather
             build than take notes.
           </p>
         </motion.div>

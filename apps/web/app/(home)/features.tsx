@@ -29,7 +29,7 @@ const features = [
   },
   {
     title: "AI that keeps up",
-    desc: "Describe what you mean and AU Board turns it into a diagram in seconds — fully editable, just like anything you'd draw yourself.",
+    desc: "Describe what you mean and Thinkspace turns it into a diagram in seconds — fully editable, just like anything you'd draw yourself.",
     color: "var(--accent)",
     fg: "var(--accent-foreground)",
     icon: (
